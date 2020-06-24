@@ -1,43 +1,50 @@
-.App{
-  background: black;
-  color: azure;
-  text-align: center;
-  height: 100vh;
+body {
+  position: relative;
+  background-color: black;
+  color: white;
+  font-family: monospace;
+  font-weight: lighter;
 }
 
-.App button{
-  
+.header {
+  display: block;
+  left: 0;
+  top: 0;
+  background-color: gray;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.display-wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  height: 350px; 
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.spaced {
+  justify-content: center;  
+}
+
+.bigger {
+  font-size: 32px;
+}
+
+.info-display {
   background-color: white;
   color: black;
-  border: 2px solid #fc4cd6; 
-  border-radius: 12px;
-  font-size: 30px;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
-.main{
-  background: blueviolet;
-  height:70px;
- 
-}
-
-.main nav{
-  margin-right: 90%;
-  padding-top: 20px;
-  font-size: 30px;
-  font-family: monospace;
-
-
-}
-
-
-.card{
-  background: pink;
-  display: flex;
-  flex-direction: row;
-  height:500px;
-  width: 75vw;
-  margin-left: 200px;
-  margin-top: 60px;
-
+.indexer {
+  text-align: right;
 }
 

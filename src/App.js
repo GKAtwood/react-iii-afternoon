@@ -1,31 +1,58 @@
 import React, { Component } from 'react';
 import './App.css';
 import data from './data';
-import Main from './Components/Main';
-import FileTwo from './Components/FileTwo'
+import Header from './Components/Header';
+import InfoDisplay from './Components/InfoDisplay'
 
-class App extends Component{
-  constructor(props){
+
+
+
+
+export default class App extends Component {
+  constructor(props) {
     super(props);
-    this.state={
-      data:{},
-      dataId: 1,
+    
+    this.state = {
+      personData: props.data,
+      currentIndex: 0,
+      displayIndex: 1
     }
-
+    
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleDecrement = this.handleDecrement.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
-  render(){
+  
+  handleIncrement() {
+    this.setState({
+      currentIndex: this.state.currentIndex + 1,
+      displayIndex: this.state.displayIndex + 1
+    })
+  }
+  
+  handleDecrement() {
+    this.setState({
+      currentIndex: this.state.currentIndex - 1,
+      displayIndex: this.state.displayIndex - 1
+    })
+  }
+  
+  handleDelete() {
+    this.state.personData.splice(this.state.currentIndex, 1);
+    this.setState({
+      personData: this.state.personData
+    });
+  }
+  
+  render() {
     return(
-  <div className="App">
-     
-     <Main />
-     <FileTwo />
-
-
-    <button >Previous</button>
-    <button>Next</button>
-    </div>
+      <div className = 'main'>
+        <Header />
+        <InfoDisplay />
+        <InfoCard personInfo={this.state.personData[this.state.currentIndex]}/>
+      </div>
     )
   }
 }
-
-export default App;
+   
+   

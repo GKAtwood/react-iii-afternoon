@@ -1,12 +1,11 @@
-import React  from 'react';
+  
+import React from 'react'
 
-const Header = (props) => (
-    <div className="header">
-      <ul>
-        <li>Home</li>
-      </ul>
-    </div>
-  ); 
+export default function Header(props) {
 
-
-  export default Header;
+    return(
+        <div class="Header">
+            <p id="home" href={null}>Home</p>
+        </div>
+    )
+}

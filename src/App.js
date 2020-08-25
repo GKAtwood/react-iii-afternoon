@@ -1,15 +1,15 @@
 import React from 'react';
+import Heading from './Heading';
+import Event from './Event';
 import './App.css';
-
-import Header from './Components/Header'
-import Body from './Components/Body'
-
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Body />
+      <header>
+        <Heading />
+      </header>
+        <Event />
     </div>
   );
 }
